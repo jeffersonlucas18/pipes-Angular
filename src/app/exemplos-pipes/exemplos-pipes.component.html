@@ -1,9 +1,9 @@
 <h1>Dados do Livros</h1>
 
-<p>Titulo: {{ livro.titulo | uppercase | lowercase | camelCase }}</p>
+<p>Titulo: {{ livro.titulo | uppercase | lowercase| camelCase }}</p>
 <p>Ranking: {{ livro.rating | number: '1.1-1' }}</p>
 <p>Numeros de Páginas : {{ livro.numerosdepagina | number }}</p>
-<p>Preço: {{ livro.preco | currency: 'BRL':  true }}</p>
+<p>Preço: {{ livro.preco | currency: 'BRL': true }}</p>
 <p>Data de Lançamento: {{ livro.dataLancamento | date: 'dd/MM/yyyy ' }}</p>
 <p>Link : {{ livro.url }}</p>
 <br>
