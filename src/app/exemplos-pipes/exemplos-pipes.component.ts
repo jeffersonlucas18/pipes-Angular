@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import { interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-exemplos-pipes',
   templateUrl: './exemplos-pipes.component.html'
 })
 export class ExemplosPipesComponent implements OnInit {
-
-  constructor() { }
 
   livro: any = {
     titulo: 'Learning JavaScript Data  Structures and Algorithms Scond Edit',
@@ -17,7 +18,19 @@ export class ExemplosPipesComponent implements OnInit {
     url: 'http: //a.co/glqjpRp'
   };
 
-  listasLivro: string[] = ['Angular', 'Java', 'Php']
+  filtro: string;
+
+  listasLivro: string[] = ['Angular', 'Java', 'Php'];
+
+  valorAsync = new Promise((resolve) => {
+    setTimeout(() => resolve ('valor assincrono'), 2000);
+  });
+
+  constructor() { }
+
+  ngOnInit() {
+
+  }
 
   AddCurso(novovalor: string) {
     this.listasLivro.push(novovalor);
@@ -33,10 +46,6 @@ export class ExemplosPipesComponent implements OnInit {
       }
       return false;
     });
-  }
-  filtro: string;
-
-  ngOnInit() {
   }
 
 }
