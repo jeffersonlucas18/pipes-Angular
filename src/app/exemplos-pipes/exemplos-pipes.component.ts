@@ -19,11 +19,21 @@ export class ExemplosPipesComponent implements OnInit {
 
   listasLivro: string[] = ['Angular', 'Java', 'Php']
 
-  AddCurso(novovalor: string){
+  AddCurso(novovalor: string) {
     this.listasLivro.push(novovalor);
     console.log(novovalor);
   }
-
+  obterCursos() {
+    if (this.listasLivro.length === 0 || this.filtro === undefined || this.filtro.trim() === '') {
+      return this.listasLivro;
+    }
+    return this.listasLivro.filter((v) => {
+      if (v.toLowerCase().indexOf(this.filtro.toLowerCase()) >= 0 ) {
+        return true;
+      }
+      return false;
+    });
+  }
   filtro: string;
 
   ngOnInit() {

@@ -18,6 +18,20 @@
 
 <input type="text" [(ngModel)]="filtro">
 
+<h5>Pipe Puro</h5>
 <ul>
   <li *ngFor="let lista of listasLivro | filtroArray:filtro">{{ lista }}</li>
+</ul>
+
+
+<h5>Pipe Impuro</h5>
+<ul>
+  <li *ngFor="let lista of listasLivro | filtroArrayImpuro:filtro">{{ lista }}</li>
+</ul>
+
+
+
+<h5>A maneira certa de usar filtro em projeto</h5>
+<ul>
+  <li *ngFor="let lista of obterCursos()">{{ lista }}</li>
 </ul>
